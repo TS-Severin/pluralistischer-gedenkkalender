@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";
 import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google'
-import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { NextUIProvider } from "@nextui-org/react";
 
 
@@ -75,21 +74,21 @@ export default function App({ Component, pageProps }) {
     <NextUIProvider>
       <div className={`${cormorant.variable}  ${bricolage.variable} `}>
         <SWRConfig value={{ fetcher }}>
-          <UserProvider>
 
 
-            <Navigation />
-            <Component {...pageProps}
-              handlePreviewClick={handlePreviewClick}
-              previewIsClicked={previewIsClicked}
-              entries={entries}
-              handleZoomChange={handleZoomChange}
-              timelineZoom={timelineZoom}
-            />
 
-          </UserProvider>
+          <Navigation />
+          <Component {...pageProps}
+            handlePreviewClick={handlePreviewClick}
+            previewIsClicked={previewIsClicked}
+            entries={entries}
+            handleZoomChange={handleZoomChange}
+            timelineZoom={timelineZoom}
+          />
+
+
         </SWRConfig>
       </div>
-    </NextUIProvider>
+    </NextUIProvider >
   );
 }

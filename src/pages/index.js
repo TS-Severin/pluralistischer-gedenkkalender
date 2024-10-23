@@ -2,14 +2,12 @@ import Head from "next/head";
 import Timeline from "@/components/Timeline/Timeline";
 import Preview from "@/components/Preview/Preview";
 import ZoomBar from "@/components/ZoomBar/ZoomBar";
-import { useUser } from '@auth0/nextjs-auth0/client';
-import AdminBar from "@/components/AdminBar/AdminBar";
 
 export default function Home({ handlePreviewClick, previewIsClicked, entries, handleZoomChange, timelineZoom }) {
-  const { user, error, isLoading } = useUser();
+  // const { user, error, isLoading } = useUser();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>{error.message}</div>;
 
   return (
     <>
@@ -21,9 +19,7 @@ export default function Home({ handlePreviewClick, previewIsClicked, entries, ha
       </Head>
       <main >
         <div className="mx-4">
-          {user ? (
-            <AdminBar entries={entries} />
-          ) : null}
+
           <Preview previewIsClicked={previewIsClicked} />
 
           <Timeline
