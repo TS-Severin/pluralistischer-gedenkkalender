@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import useSWR from "swr"
 import ICalDownload from "@/components/ICalDownload/ICalDownload";
 import { useState } from "react";
-import EntryForm from "@/components/EntryForm/EntryForm";
+
 
 
 export default function DateDetailsPage() {
