@@ -4,8 +4,8 @@ import Navigation from "@/components/Navigation/Navigation";
 import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";
+import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google';
 // import fetcher from "../pages/lib/fetcher";
-import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google'
 import { NextUIProvider } from "@nextui-org/react";
 import { changeDateFormat } from "@/services/changeDateFormat";
 
