@@ -16,8 +16,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "cormorant": ['var(--font-cormorant)'],
-        "bricolage": ['var(--font-bricolage)'],
+        "cormorant": ['var(--font-cormorant)', 'Georgia', 'Times', 'serif'],
+        "bricolage": ['var(--font-bricolage)', 'Arial', 'Helvetica', 'sans-serif'],
       },
 
     },
