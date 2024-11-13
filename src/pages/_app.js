@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";
 import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google';
-// import fetcher from "../pages/lib/fetcher";
 import { NextUIProvider } from "@nextui-org/react";
 import { changeDateFormat } from "@/services/changeDateFormat";
 
@@ -14,12 +13,16 @@ const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-cormorant',
+  display: "swap",
+  preload: false,
 })
 
 const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-bricolage',
+  display: "swap",
+  preload: false,
 })
 
 export default function App({ Component, pageProps }) {
