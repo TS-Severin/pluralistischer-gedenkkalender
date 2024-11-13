@@ -32,7 +32,7 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
     // console.log("error clickedentryid:", clickedEntryId, entries);
     // const previewText = clickedEntry.excerpt.rendered;
 
-    // console.log(previewText);
+    console.log(clickedEntry);
 
     // const previewTextMarkup = dangerouslySetInnerHTML = { createMarkup(previewText) };
 
@@ -41,8 +41,8 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
             <div className="relative">
                 <h1 className="font-bricolage font-extralight text-2xl">{`${clickedEntry.acf.date}`}</h1>
                 <h1 className="font-bricolage font-extralight text-2xl pt-4">{`${clickedEntry.title.rendered}`}</h1>
-                <p className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${clickedEntry.excerpt.rendered} ...` }} />
-                <Link href={`/${clickedEntry.link}`} className="font-cormorant underline max-sm:pt-8">
+                <div className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${clickedEntry.excerpt.rendered} ...` }} />
+                <Link href={clickedEntry.link} className="font-cormorant underline max-sm:pt-8">
                     ganzen Text lesen
                 </Link>
                 <p className="max-sm:hidden font-cormorant italic text-right pt-1">{clickedEntry.acf.author}</p>
