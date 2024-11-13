@@ -1,4 +1,4 @@
-import GetPreviewText from "@/services/GetPreviewText";
+// import GetPreviewText from "@/services/GetPreviewText";
 import GenerateICalFiles from "@/services/GenerateICalFile";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,14 +7,14 @@ export default function ICalDownload({ date, title, iCalSlug, text }) {
 
     // ICAL LOGIC
     // get preview text for ical-file
-    const previewText = GetPreviewText(text);
+    // const previewText = GetPreviewText(text);
 
     // function for removing html-tags for the calender preview on clientsite calendars
     function removeHtmlTags(input) {
         return input.replace(/<[^>]*>/g, '');
     }
 
-    const previewTextWithoutHtml = removeHtmlTags(previewText);
+    const previewTextWithoutHtml = removeHtmlTags(text);
 
 
     const iCalText = `${previewTextWithoutHtml} ... Weiter lesen unter dem Link`;

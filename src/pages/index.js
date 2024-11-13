@@ -20,13 +20,14 @@ export default function Home({ handlePreviewClick, previewIsClicked, entries, ha
       <main >
         <div className="mx-4">
 
-          <Preview previewIsClicked={previewIsClicked} />
+          <Preview previewIsClicked={previewIsClicked} entries={entries} />
 
           <Timeline
             handlePreviewClick={handlePreviewClick}
             previewIsClicked={previewIsClicked}
             timelineZoom={timelineZoom}
-
+            entries={entries}
+          // need to pass isLoading to components
           />
           <ZoomBar handleZoomChange={handleZoomChange} />
         </div>

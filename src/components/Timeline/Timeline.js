@@ -3,14 +3,13 @@ import TimelineMonths from "../TimelineMonths/TimelineMonths";
 import TimelineAxis from "../TimelineAxis/TimelineAxis";
 import TimelineToday from "../TimelineToday/TimelineToday";
 import styled from "styled-components";
-import useSWR from "swr";
 import { useState, useEffect } from 'react';
 
 
 
-export default function Timeline({ handlePreviewClick, previewIsClicked, timelineZoom }) {
-  const { data: entries, isLoading } = useSWR("/api");
+export default function Timeline({ handlePreviewClick, previewIsClicked, timelineZoom, entries }) {
 
+  // console.log("TIMELINE ", entries);
 
   // turns on overflow-visibility of dots when flying in and turns on overflow-x-scroll afterwards
 
@@ -24,7 +23,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
   }, []);
 
   //   if (error) return <div>Error fetching data</div>;
-  if (isLoading) return <div>Loading...</div>;
+  // if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
@@ -61,8 +60,8 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
 
 
             {entries &&
-              entries.map(({ _id: id, date, color, slug }) => (
-                <TimelineDot key={id} date={date} color={color} slug={slug} id={id} handlePreviewClick={handlePreviewClick} timelineZoom={timelineZoom} />
+              entries.map(({ id, acf, link }) => (
+                <TimelineDot key={id} date={acf.date} link={link} id={id} handlePreviewClick={handlePreviewClick} timelineZoom={timelineZoom} />
               ))}
 
           </div>

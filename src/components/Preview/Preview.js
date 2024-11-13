@@ -1,12 +1,12 @@
 import TimelinePreview from "../TimelinePreview/TimelinePreview";
-import useSWR from "swr";
 
 
-export default function Preview({ previewIsClicked }) {
-    const { data: entries, isLoading } = useSWR("/api");
+
+export default function Preview({ previewIsClicked, entries }) {
+
 
     //   if (error) return <div>Error fetching data</div>;
-    if (isLoading) return <div>Loading...</div>;
+    // if (isLoading) return <div>Loading...</div>;
 
     return (
         <div className="w-full bg-white h-64 mt-4 p-8 border-4 rounded-t-3xl shadow-xl">
