@@ -5,8 +5,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import Link from "next/link";
 import getRandomPurple from "@/services/GetRandomPurple";
 
-export default function TimelineDot({ id, date, slug, handlePreviewClick, timelineZoom }) {
+export default function TimelineDot({ id, date, link, handlePreviewClick, timelineZoom }) {
   const percentOfYear = GetDayOfYearHelper(date);
+
   // random purple for each dot
   const randomPurple = getRandomPurple();
 
@@ -46,7 +47,7 @@ export default function TimelineDot({ id, date, slug, handlePreviewClick, timeli
     <>
 
 
-      <ConditionalLink href={`/${slug}`}>
+      <ConditionalLink href={link}>
         <StyledTimelineDot
           key={id}
           ref={dotRef}

@@ -6,6 +6,8 @@ import styled from "styled-components";
 
 export default function TimelineToday({ entries, previewIsClicked, timelineZoom }) {
 
+
+
     // Function to find an entry in the array with today's date
     function findEntryWithTodayDate(entries) {
         // Get today's date in "mm-dd" format
@@ -19,7 +21,7 @@ export default function TimelineToday({ entries, previewIsClicked, timelineZoom 
 
         // Iterate over entries and find the one with today's date
         for (const entry of entries) {
-            const entryDateFormatted = GetMonthDayDateHelper(entry.date);
+            const entryDateFormatted = GetMonthDayDateHelper(entry.acf.date);
             // console.log("alle mm-dd daten: ", entryDateFormatted);
             if (entryDateFormatted === todayFormatted) {
                 return entry; // Return the entry with today's date
@@ -46,7 +48,7 @@ export default function TimelineToday({ entries, previewIsClicked, timelineZoom 
         <StyledTodayFullDate $currentPercentOfYear={currentPercentOfYear} $timelineZoom={timelineZoom}>
             <h3 className="font-bricolage">{todayFullDate}</h3>
             {todayEntry && (
-                clickedEntryId === undefined || clickedEntryId.id !== todayEntry._id ? (
+                clickedEntryId === undefined || clickedEntryId.id !== todayEntry.id ? (
                     <p className="font-bricolage">{todayEntry.title}</p>
                 ) : null
             )}
