@@ -112,7 +112,7 @@ export default function App({ Component, pageProps }) {
 
 
 
-          <Navigation />
+
           <Component {...pageProps}
             handlePreviewClick={handlePreviewClick}
             previewIsClicked={previewIsClicked}

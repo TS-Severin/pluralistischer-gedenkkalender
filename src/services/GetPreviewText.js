@@ -1,4 +1,4 @@
-export default function GetPreviewText(text) {
+export default function getPreviewText(text) {
     // Split the text into words
     const words = text.split(/\s+/);
 
