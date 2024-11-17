@@ -79,7 +79,7 @@ export default function App({ Component, pageProps }) {
   }, [entries]);
   if (isLoading) return <div>Loading...</div>;
 
-  console.log("PREVIEW IS CLICKED ", previewIsClicked);
+  // console.log("PREVIEW IS CLICKED ", previewIsClicked);
 
 
 

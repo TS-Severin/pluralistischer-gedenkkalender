@@ -1,6 +1,7 @@
 // import GetPreviewText from "@/services/GetPreviewText";
 import Link from "next/link";
 import ICalDownload from "../ICalDownload/ICalDownload";
+import getFullDayDate from "@/services/getFullDayDate";
 
 
 export default function TimelinePreview({ entries, previewIsClicked }) {
@@ -28,6 +29,9 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
     }
 
 
+    const startDate = getFullDayDate(clickedEntry.acf.date);
+    const endDate = clickedEntry.acf.endDate !== clickedEntry.acf.date ? `- ${getFullDayDate(clickedEntry.acf.endDate)}` : "";
+
     // const { title, author, date, datestring, slug, } = clickedEntry;
     // console.log("error clickedentryid:", clickedEntryId, entries);
     // const previewText = clickedEntry.excerpt.rendered;
@@ -39,7 +43,7 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
     return (
         <>
             <div className="relative">
-                <h1 className="font-bricolage font-extralight text-2xl">{`${clickedEntry.acf.date}`}</h1>
+                <h1 className="font-bricolage font-extralight text-2xl">{`${startDate} ${endDate}`}</h1>
                 <h1 className="font-bricolage font-extralight text-2xl pt-4">{`${clickedEntry.title.rendered}`}</h1>
                 <div className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${clickedEntry.excerpt.rendered} ...` }} />
                 <Link href={clickedEntry.link} className="font-cormorant underline max-sm:pt-8">
