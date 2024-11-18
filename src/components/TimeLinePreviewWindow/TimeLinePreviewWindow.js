@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default function TimeLinePreviewWindow({ entry }) {
 
-    console.log("WINDOWENTRY: ", entry);
 
     const startDate = getFullDayDate(entry.acf.date);
     const endDate = entry.acf.endDate !== entry.acf.date ? `- ${getFullDayDate(entry.acf.endDate)}` : "";

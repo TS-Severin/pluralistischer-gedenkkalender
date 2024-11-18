@@ -1,8 +1,4 @@
 // import GetPreviewText from "@/services/GetPreviewText";
-import Link from "next/link";
-import ICalDownload from "../ICalDownload/ICalDownload";
-import getFullDayDate from "@/services/getFullDayDate";
-import getPreviewText from "@/services/GetPreviewText";
 import findEntryWithTodayDate from "@/services/findEntryWithTodayDate";
 import TimeLinePreviewWindow from "../TimeLinePreviewWindow/TimeLinePreviewWindow";
 
