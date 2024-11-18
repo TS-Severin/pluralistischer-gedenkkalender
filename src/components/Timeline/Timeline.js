@@ -43,7 +43,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
 
 
 
-          <div className="relative top-[51%] max-sm:top-[54%] w-full">
+          <div className="relative top-[44%] max-sm:top-[46%] w-full">
             <TimelineAxis timelineZoom={timelineZoom} />
           </div>
 
@@ -53,7 +53,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
 
 
           <div
-            className="relative  w-full align-middle justify-center top-[57%]"
+            className="relative  w-full align-middle justify-center top-[60%] sm:top-[57%]"
 
           >
 
@@ -68,7 +68,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
 
 
           <div
-            className="w-full relative top-[70%] align-middle justify-center">
+            className="w-full relative top-[90%] align-middle justify-center">
 
             <TimelineMonths timelineZoom={timelineZoom} />
 
