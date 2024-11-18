@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
         // Set the appropriate headers for the .ics file download
         res.setHeader('Content-Type', 'text/calendar');
-        res.setHeader('Content-Disposition', `attachment; filename=${id}.ics`);
+        res.setHeader('Content-Disposition', `attachment; filename=${event.title.rendered}.ics`);
         res.send(icsContent); // Send the .ics content
 
     } catch (error) {

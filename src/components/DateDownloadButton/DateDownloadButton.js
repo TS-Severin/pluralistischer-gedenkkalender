@@ -5,7 +5,7 @@ export default function DateDownloadButton({ event }) {
 
     return (
 
-        <Link href={icalDownloadLink} download={`${event.id}.ics`}>
+        <Link href={icalDownloadLink} download="event.ics">
 
             <button>Download Event</button>
 
