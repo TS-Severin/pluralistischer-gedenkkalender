@@ -34,7 +34,7 @@ export default function TimeLinePreviewWindow({ entry }) {
                 <div className="absolute top-0 right-0">
                     <ICalDownload date={entry.acf.date} title={entry.title.rendered} iCalSlug={entry.acf.date} text={entry.excerpt.rendered} />
                 </div>
-                <DateDownloadButton event={entry} />
+                {/* <DateDownloadButton event={entry} /> */}
             </div>
         </>
     );
