@@ -20,7 +20,7 @@ const StyledTimelineAxis = styled.span`
 position: absolute;
 left: ${(props) => props.$currentPercentOfYear}%;
 width: ${(props) => (props.$timelineZoom / 250 + 2)}px;
-height: ${(props) => (props.$timelineZoom / 100 + 24)}px;
+height: ${(props) => (props.$timelineZoom / 100 + 48)}px;
 overflow: visible;
 background-color: black;
 z-index: 1000

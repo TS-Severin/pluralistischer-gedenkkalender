@@ -2,7 +2,7 @@ import getFullDayDate from "@/services/getFullDayDate";
 import getPreviewText from "@/services/GetPreviewText";
 import ICalDownload from "../ICalDownload/ICalDownload";
 import DateDownloadButton from "../DateDownloadButton/DateDownloadButton";
-import Link from "next/link";
+import { Link } from "@nextui-org/link";
 
 export default function TimeLinePreviewWindow({ entry }) {
 
@@ -23,8 +23,8 @@ export default function TimeLinePreviewWindow({ entry }) {
                 <div className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />
 
 
-                <Link href={entry.link} className="absolute right-0 bottom-0 font-cormorant underline max-sm:pt-8">
-                    weiter lesen
+                <Link href={entry.link} color="secondary" size="md" className="absolute right-0 bottom-0 font-bricolage">
+                    mehr dazu
                 </Link>
 
                 <p className="absolute bottom-0 max-sm:hidden font-cormorant italic">{entry.acf.author}</p>

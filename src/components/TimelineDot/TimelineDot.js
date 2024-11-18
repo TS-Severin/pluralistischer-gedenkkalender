@@ -3,13 +3,12 @@ import GetDayOfYearHelper from "../../services/GetDayOfYearHelper";
 import useGSAP from "./useDotAnimation";
 import React, { useRef, useState, useEffect } from 'react';
 import Link from "next/link";
-import getRandomPurple from "@/services/GetRandomPurple";
+import getPurpleFromPercentage from "@/services/getPurpleFromPercentage";
 
 export default function TimelineDot({ id, date, link, handlePreviewClick, timelineZoom }) {
   const percentOfYear = GetDayOfYearHelper(date);
 
-  // random purple for each dot
-  const randomPurple = getRandomPurple();
+  const purpleFromPercentage = getPurpleFromPercentage(percentOfYear);
 
   // define reference for gsap animatin of dots (pass as props)
   const dotRef = useRef(null);
@@ -51,7 +50,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
         <StyledTimelineDot
           key={id}
           ref={dotRef}
-          $randomPurple={randomPurple}
+          $purpleFromPercentage={purpleFromPercentage}
           $percentOfYear={percentOfYear}
           onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
           onClick={isSmallScreen ? () => handlePreviewClick(id) : undefined}
@@ -75,14 +74,14 @@ transform: translateY(-1px);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 10)}px;
 width: ${(props) => (props.$timelineZoom / 100 + 10)}px;
-background-color: gray;
+background-color: ${(props) => props.$purpleFromPercentage};
 box-shadow: rgb(0 0 0 / 20%) 0 0 ${(props) => (props.$timelineZoom / 100 + 10)}px;
 border-radius: 50%;
 z-index: 1000;
 justify-self: center;
 transition: all 3s ease;
 &:hover {
-  background-color: #7638c8;
+  background-color: white;
   box-shadow: rgb(118, 56, 200)
   0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 10)}px;
   transition: all 0.01s ease;
@@ -96,18 +95,18 @@ transition: all 3s ease;
 left: ${(props) => props.$percentOfYear}%;
 transform: translateX(-50%);
 overflow: visible;
-height: ${(props) => (props.$timelineZoom / 100 + 16)}px;
-width: ${(props) => (props.$timelineZoom / 100 + 16)}px;
-background-color: gray;
+height: ${(props) => (props.$timelineZoom / 100 + 8)}px;
+width: ${(props) => (props.$timelineZoom / 100 + 8)}px;
+background-color: ${(props) => props.$purpleFromPercentage};;
 box-shadow: rgb(0 0 0 / 20%) 0 0 ${(props) => (props.$timelineZoom / 100 + 8)}px;
 border-radius: 50%;
 z-index: 1000;
 justify-self: center;
 transition: all 3s ease;
 &:hover {
-  background-color: #7638c8;
+  background-color: white;
   box-shadow: rgb(118, 56, 200)
-  0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 8)}px;
+  0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 4)}px;
   transition: all 0.01s ease;
 
 }
@@ -122,7 +121,7 @@ transition: all 3s ease;
 // z-index: 1000;
 // height: ${(props) => (props.$timelineZoom / 100 + 16)}px;
 // width: ${(props) => (props.$timelineZoom / 100 + 16)}px;
-// background-color: ${(props) => props.$randomPurple};
+// background-color: ${(props) => props.$purpleFromPercentage};
 // border-radius: 50%;
 // justify-self: center;
 // transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease; 
