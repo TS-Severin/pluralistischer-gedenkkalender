@@ -3,32 +3,12 @@ import GetFormattedDateHelper from "@/services/GetFormattedDateHelper";
 import GetMonthDayDateHelper from "../../services/GetMonthDayDateHelper";
 import GetCurrentDayOfYearHelper from "@/services/GetCurrentDayOfYearHelper";
 import styled from "styled-components";
+import findEntryWithTodayDate from "@/services/findEntryWithTodayDate";
+
 
 export default function TimelineToday({ entries, previewIsClicked, timelineZoom }) {
 
 
-
-    // Function to find an entry in the array with today's date
-    function findEntryWithTodayDate(entries) {
-        // Get today's date in "mm-dd" format
-        // get today's date in yyyy-mm-dd
-        const today = GetFormattedDateHelper()
-        // convert today's date to mm-dd => today
-        const todayFormatted = GetMonthDayDateHelper(today);
-        // console.log("heute :", today);
-        // console.log("heute mm-dd: ", todayFormatted);
-        // console.log(entries);
-
-        // Iterate over entries and find the one with today's date
-        for (const entry of entries) {
-            const entryDateFormatted = GetMonthDayDateHelper(entry.acf.date);
-            // console.log("alle mm-dd daten: ", entryDateFormatted);
-            if (entryDateFormatted === todayFormatted) {
-                return entry; // Return the entry with today's date
-            }
-        }
-        return null; // Return null if no entry found for today's date
-    }
 
     const todayEntry = findEntryWithTodayDate(entries);
     // console.log("heutiges ereignis: ", todayEntry);
@@ -49,7 +29,7 @@ export default function TimelineToday({ entries, previewIsClicked, timelineZoom 
             <h3 className="font-bricolage">{todayFullDate}</h3>
             {todayEntry && (
                 clickedEntryId === undefined || clickedEntryId.id !== todayEntry.id ? (
-                    <p className="font-bricolage">{todayEntry.title}</p>
+                    <p className="font-bricolage">{todayEntry.title.rendered}</p>
                 ) : null
             )}
 

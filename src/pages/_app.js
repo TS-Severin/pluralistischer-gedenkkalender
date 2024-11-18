@@ -1,6 +1,6 @@
 import "@/styles/globals.scss";
 import { SWRConfig } from "swr";
-import Navigation from "@/components/Navigation/Navigation";
+// import Navigation from "@/components/Navigation/Navigation";
 import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";

@@ -1,9 +1,13 @@
-export default function getPreviewText(text) {
+export default function getPreviewText(text, titleLength) {
     // Split the text into words
     const words = text.split(/\s+/);
-
+    let previewLength = 30;
     // first words number
-    const previewWords = words.slice(0, 10);
+
+    if (titleLength > 40) {
+        previewLength = 9;
+    };
+    const previewWords = words.slice(0, previewLength);
 
     // Join the words back into a string
     const previewText = previewWords.join(' ');
