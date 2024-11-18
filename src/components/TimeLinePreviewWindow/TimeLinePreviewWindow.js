@@ -1,11 +1,11 @@
 import getFullDayDate from "@/services/getFullDayDate";
 import getPreviewText from "@/services/GetPreviewText";
 import ICalDownload from "../ICalDownload/ICalDownload";
+import DateDownloadButton from "../DateDownloadButton/DateDownloadButton";
 import Link from "next/link";
 
 export default function TimeLinePreviewWindow({ entry }) {
 
-    console.log("WINDOWENTRY: ", entry);
 
     const startDate = getFullDayDate(entry.acf.date);
     const endDate = entry.acf.endDate !== entry.acf.date ? `- ${getFullDayDate(entry.acf.endDate)}` : "";
@@ -32,8 +32,9 @@ export default function TimeLinePreviewWindow({ entry }) {
 
 
                 <div className="absolute top-0 right-0">
-                    <ICalDownload date={entry.acf.date} title={entry.title.rendered} iCalSlug={entry.link} text={entry.excerpt.rendered} />
+                    <ICalDownload date={entry.acf.date} title={entry.title.rendered} iCalSlug={entry.acf.date} text={entry.excerpt.rendered} />
                 </div>
+                <DateDownloadButton event={entry} />
             </div>
         </>
     );
