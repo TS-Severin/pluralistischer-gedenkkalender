@@ -23,10 +23,11 @@ export default function ICalDownload({ date, title, iCalSlug, text }) {
     const kalender = GenerateICalFiles(date, title, iCalSlug, iCalText)
     // console.log("iCalFiles", kalender)
     const icalDownloadLink = `data:text/calendar;charset=utf-8,${encodeURIComponent(kalender)}`;
-
+    console.log("ICALDATA ", icalDownloadLink);
 
     return (
         <>
+
             <Link href={icalDownloadLink} download={`${iCalSlug}.ics`}>
 
                 <Image src="/calenderFresh.png" alt="icon for ical data download" width={30} height={30} />

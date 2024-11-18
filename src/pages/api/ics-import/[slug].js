@@ -1,5 +1,6 @@
 import { generateICS } from "@/services/generateICS";
 
+
 const fetchEntriesFromWpApi = async () => {
     const responsePage1 = await fetch("https://cppdnetwork.com/wp-json/wp/v2/plgk-eintrag/?per_page=100&_fields=id,title,excerpt,link,acf");
     const responsePage2 = await fetch("https://cppdnetwork.com/wp-json/wp/v2/plgk-eintrag/?per_page=100&offset=100&_fields=id,title,excerpt,link,acf");
@@ -31,6 +32,7 @@ export default async function handler(req, res) {
         }
 
         // Generate the iCalendar content for the event
+        // const icsContent = generateICS(event);
         const icsContent = generateICS(event);
 
         // Set the appropriate headers for the .ics file download
