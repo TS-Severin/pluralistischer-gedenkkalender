@@ -12,16 +12,8 @@ export default async function handler(req, res) {
                 return res.status(404).json({ message: 'Event not found' });
             }
 
-
             // Generate the iCalendar content for the event
             const icsContent = generateICS(event);
-
-    try {
-        // Set CORS headers
-        res.setHeader("Access-Control-Allow-Origin", "https://pluralistischer-gedenkkalender.vercel.app/");
-        // Fetch the entries data from an external API or database
-        const entries = await fetchEntriesFromWpApi();
-
 
             // Set the appropriate headers for the .ics file download
             res.setHeader("Content-Type", "text/calendar");
@@ -36,6 +28,7 @@ export default async function handler(req, res) {
         res.status(405).json({ message: "Method Not Allowed" });
     }
 }
+
 
 
 
