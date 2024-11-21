@@ -51,6 +51,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     if (dataPage1 && dataPage2) {
       const combinedEntries = [...dataPage1, ...dataPage2];
+      // make dateformat js readable yyyy-mm-dd
       const updatedEntries = changeDateFormat(combinedEntries);
       setEntries(updatedEntries);
     }
