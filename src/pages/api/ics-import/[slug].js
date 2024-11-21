@@ -21,6 +21,8 @@ export default async function handler(req, res) {
     const id = parseInt(slug); // Extract the numeric id (e.g., 4161)
 
     try {
+        // Set CORS headers
+        res.setHeader("Access-Control-Allow-Origin", "https://pluralistischer-gedenkkalender.vercel.app/");
         // Fetch the entries data from an external API or database
         const entries = await fetchEntriesFromWpApi();
 
