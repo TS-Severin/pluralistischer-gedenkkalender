@@ -8,7 +8,7 @@ export default function TimeLinePreviewWindow({ entry }) {
 
 
     const startDate = getFullDayDate(entry.acf.date);
-    const endDate = entry.acf.endDate !== entry.acf.date ? `- ${getFullDayDate(entry.acf.endDate)}` : "";
+    const endDate = entry.acf.endDate !== entry.acf.date ? `${getFullDayDate(entry.acf.endDate)}` : "";
 
     const previewText = getPreviewText(entry.excerpt.rendered, entry.title.rendered.length);
 
@@ -16,8 +16,14 @@ export default function TimeLinePreviewWindow({ entry }) {
     return (
         <>
             <div className="relative h-[188px] sm:h-[220px]">
-                <h1 className="font-bricolage font-extralight text-2xl">{`${startDate} ${endDate}`}</h1>
-                <h1 className="font-bricolage font-extralight text-2xl pt-4">{`${entry.title.rendered}`}</h1>
+                <h1 className={`font-bricolage font-extralight ${endDate ? 'text-md' : 'text-2xl'}`}>{`${startDate}${endDate ? ' -' : ''}`}</h1>
+                <h1 className="font-bricolage font-extralight">{`${endDate}`}</h1>
+                <p className={`font-bricolage font-extralight hyphens-auto break-words ${endDate || entry.title.rendered.length > 55
+                    ? 'text-md'
+                    : entry.title.rendered.length > 55
+                        ? 'text-md'
+                        : 'text-2xl'
+                    } pt-4`}>{`${entry.title.rendered}`}</p>
 
 
                 <div className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />

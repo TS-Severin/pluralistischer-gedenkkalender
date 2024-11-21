@@ -19,9 +19,14 @@ module.exports = {
         "cormorant": ['var(--font-cormorant)', 'Georgia', 'Times', 'serif'],
         "bricolage": ['var(--font-bricolage)', 'Arial', 'Helvetica', 'sans-serif'],
       },
+      hyphens: {
+        auto: 'auto',
+        none: 'none',
+        manual: 'manual',
+      },
 
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(),],
 }

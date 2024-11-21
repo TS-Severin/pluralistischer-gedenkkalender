@@ -48,5 +48,8 @@ text-transform: uppercase;
 overflow: visible;
 font-size: ${(props) => (props.$timelineZoom / 7600 + 0.7)}rem;
 transition: all 0.3s ease;
+@media (max-width: 640px) {
+    font-size: ${(props) => (props.$timelineZoom / 7600 + 0.6)}rem;
+}
 `;
 
