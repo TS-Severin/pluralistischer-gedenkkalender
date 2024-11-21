@@ -22,8 +22,8 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
 
     if (todayEntry !== null) {
         return (
-            <>
-                <TimeLinePreviewWindow entry={todayEntry} />
+            <>{entries ?
+                <TimeLinePreviewWindow entry={todayEntry} entries={entries} /> : "null"}
 
             </>
         );
@@ -37,16 +37,16 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
         const clickedEntry = entries.find(entryObj => entryObj.id === clickedEntryId.id);
         console.log("CLLLL", clickedEntry);
         return (
-            <>
-                <TimeLinePreviewWindow entry={clickedEntry} />
+            <>{entries ?
+                <TimeLinePreviewWindow entry={clickedEntry} entries={entries} /> : "null"}
             </>
         );
     } else {
 
         return (
             <>
-                {upcomingEntry ? (
-                    <TimeLinePreviewWindow entry={upcomingEntry} />
+                {upcomingEntry && entries ? (
+                    <TimeLinePreviewWindow entry={upcomingEntry} entries={entries} />
                 ) : (null)
 
                 }

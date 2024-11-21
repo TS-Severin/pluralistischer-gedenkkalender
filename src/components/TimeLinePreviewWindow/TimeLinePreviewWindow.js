@@ -5,7 +5,7 @@ import DateDownloadButton from "../DateDownloadButton/DateDownloadButton";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 
-export default function TimeLinePreviewWindow({ entry }) {
+export default function TimeLinePreviewWindow({ entry, entries }) {
 
 
     const startDate = getFullDayDate(entry.acf.date);
@@ -40,7 +40,7 @@ export default function TimeLinePreviewWindow({ entry }) {
                 <div className="absolute top-0 right-0">
                     <ICalDownload date={entry.acf.date} title={entry.title.rendered} iCalSlug={entry.acf.date} text={entry.excerpt.rendered} />
                 </div>
-                <DateDownloadButton event={entry} />
+                <DateDownloadButton event={entry} entries={entries} />
             </div>
         </>
     );
