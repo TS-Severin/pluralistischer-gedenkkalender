@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function DateDownloadButton({ event }) {
-    const icalDownloadLink = `/api/ics-import/${event.id}`;
+    const icalDownloadLink = `https://pluralistischer-gedenkkalender.vercel.app/api/ics-import/${event.id}`;
 
     return (
 
