@@ -1,15 +1,15 @@
-
+import Link from "next/link";
 
 export default function DateDownloadButton({ event }) {
     const icalDownloadLink = `/api/ics-import/${event.id}`;
 
     return (
 
-        <a href={icalDownloadLink} download="event.ics">
+        <Link href={icalDownloadLink} download="event.ics">
 
             <button>Download Event</button>
 
-        </a>
+        </Link>
 
     );
 };
