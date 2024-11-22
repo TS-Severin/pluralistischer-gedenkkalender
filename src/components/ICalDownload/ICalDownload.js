@@ -25,10 +25,12 @@ export default function ICalDownload({ date, title, iCalSlug, text }) {
     const icalDownloadLink = `data:text/calendar;charset=utf-8,${encodeURIComponent(kalender)}`;
     // console.log("ICALDATA ", icalDownloadLink);
 
+    const titleForDownload = title.trim().replace(/\s+/g, '-').replace(/ö/g, 'oe').replace(/ä/g, 'ae').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+
     return (
         <>
 
-            <Link href={icalDownloadLink} download={`${iCalSlug}.ics`}>
+            <Link href={icalDownloadLink} download={`${titleForDownload}.ics`}>
 
                 <Image src="/calenderFresh.png" alt="icon for ical data download" width={30} height={30} />
 

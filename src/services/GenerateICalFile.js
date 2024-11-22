@@ -35,7 +35,7 @@ export default function GenerateICalFiles(date, title, iCalSlug, text) {
     // Set the appropriate HTTP headers
     const headers = {
         'Content-Type': 'text/calendar; charset=utf-8',
-        'Content-Disposition': `attachment; filename=${iCalSlug}.ics`
+        'Content-Disposition': `attachment; filename=${title}.ics`
     };
 
     const iCalFile =
