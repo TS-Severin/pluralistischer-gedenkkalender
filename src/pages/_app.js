@@ -7,6 +7,7 @@ import useSWR from "swr";
 import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google';
 import { NextUIProvider } from "@nextui-org/react";
 import { changeDateFormat } from "@/services/changeDateFormat";
+import SpinnerComponent from "@/components/SpinnerComponent/Spinner";
 
 
 const cormorant = Cormorant_Garamond({
@@ -78,7 +79,7 @@ export default function App({ Component, pageProps }) {
 
     }
   }, [entries]);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div><SpinnerComponent /></div>;
 
   // console.log("PREVIEW IS CLICKED ", previewIsClicked);
 

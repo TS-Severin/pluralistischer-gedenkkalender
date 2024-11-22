@@ -15,6 +15,8 @@ export function changeDateFormat(entries) {
             // Only reformat endDate if it's not null
             if (endDate !== null && endDate !== undefined && endDate !== "") {
                 updatedEntry.acf.endDate = reformatDate(endDate);
+            } else {
+                updatedEntry.acf.endDate = updatedEntry.acf.date;
             }
 
         }

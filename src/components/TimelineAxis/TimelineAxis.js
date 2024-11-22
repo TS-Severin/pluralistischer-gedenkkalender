@@ -22,7 +22,7 @@ left: ${(props) => props.$currentPercentOfYear}%;
 width: ${(props) => (props.$timelineZoom / 250 + 2)}px;
 height: ${(props) => (props.$timelineZoom / 100 + 48)}px;
 overflow: visible;
-background-color: black;
+background-color: red;
 z-index: 1000
 transition: all 0.3s ease;
 `;
