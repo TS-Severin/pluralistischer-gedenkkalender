@@ -112,23 +112,3 @@ transition: all 3s ease;
 }
 
 `;
-
-// const StyledTimelineDotMobile = styled.div`
-// position: absolute;
-// left: ${(props) => props.$percentOfYear}%;
-// transform: translateX(-50%);
-// overflow: visible;
-// z-index: 1000;
-// height: ${(props) => (props.$timelineZoom / 100 + 16)}px;
-// width: ${(props) => (props.$timelineZoom / 100 + 16)}px;
-// background-color: ${(props) => props.$purpleFromPercentage};
-// border-radius: 50%;
-// justify-self: center;
-// transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease; 
-// transition-timing-function: ease-out;
-// &:hover {
-//   height: 24px;
-//   width: 24px;
-//   background-color: rgb(155, 50, 150);
-// }
-// `;
