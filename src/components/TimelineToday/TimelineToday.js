@@ -18,7 +18,7 @@ export default function TimelineToday({ timelineZoom }) {
     const currentPercentOfYear = GetCurrentDayOfYearHelper();
     return (
         <StyledTodayFullDate $currentPercentOfYear={currentPercentOfYear} $timelineZoom={timelineZoom}>
-            <h3 className="font-bricolage">{todayFullDate}</h3>
+            <h3 className="font-surt">{todayFullDate}</h3>
         </StyledTodayFullDate>
     );
 }

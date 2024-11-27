@@ -35,7 +35,7 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
 
     if (clickedEntryId) {
         const clickedEntry = entries.find(entryObj => entryObj.id === clickedEntryId.id);
-        console.log("CLLLL", clickedEntry);
+
         return (
             <>{entries ?
                 <TimeLinePreviewWindow entry={clickedEntry} entries={entries} /> : "null"}
