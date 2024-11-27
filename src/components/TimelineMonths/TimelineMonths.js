@@ -28,7 +28,7 @@ export default function TimelineMonths({ timelineZoom }) {
             {months.map(month => {
                 const percentOfYear = calculatePercentOfYear(month.dateToBeShown);
                 return (
-                    <StyledMonth className="font-bricolage" key={month.month} $percentOfYear={percentOfYear}
+                    <StyledMonth className="font-surt" key={month.month} $percentOfYear={percentOfYear}
                         $timelineZoom={timelineZoom}>
                         {month.month}
                     </StyledMonth>

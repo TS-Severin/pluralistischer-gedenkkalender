@@ -16,9 +16,9 @@ export default function TimeLinePreviewWindow({ entry, entries }) {
     return (
         <>
             <div className="relative h-[188px] sm:h-[220px]">
-                <h1 className={`font-bricolage font-extralight sm:text-2xl ${endDate ? 'text-md' : 'text-2xl'}`}>{`${startDate}${endDate ? ' -' : ''}`}</h1>
-                <h1 className="font-bricolage font-extralight sm:text-2xl">{`${endDate}`}</h1>
-                <p className={`font-bricolage font-extralight hyphens-auto break-words sm:text-2xl ${endDate || entry.title.rendered.length > 55
+                <h1 className={`font-surt text-lg sm:text-2xl ${endDate ? 'text-md' : 'text-2xl'}`}>{`${startDate}${endDate ? ' -' : ''}`}</h1>
+                <h1 className="font-surt text-lg sm:text-2xl">{`${endDate}`}</h1>
+                <p className={`font-surt text-lg hyphens-auto break-words sm:text-2xl ${endDate || entry.title.rendered.length > 55
                     ? 'text-md'
                     : entry.title.rendered.length > 55
                         ? 'text-md'
@@ -26,14 +26,14 @@ export default function TimeLinePreviewWindow({ entry, entries }) {
                     } pt-4`}>{`${entry.title.rendered}`}</p>
 
 
-                <div className="max-sm:hidden font-cormorant pt-4" dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />
+                <div className="max-sm:hidden font-surt pt-4" dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />
 
 
-                <Link href={entry.link} className="absolute right-0 bottom-0 font-bricolage text-[#7837c9]"><span className="inline-flex items-center">
+                <Link href={entry.link} className="absolute right-0 bottom-0 font-surt text-[#7837c9]"><span className="inline-flex items-center">
                     mehr dazu<IoMdArrowDropright className="text-xl" /></span>
                 </Link>
 
-                <p className="absolute bottom-0 max-sm:hidden font-cormorant italic">{entry.acf.author}</p>
+                <p className="absolute bottom-0 max-sm:hidden font-surt italic">{entry.acf.author}</p>
 
 
 
