@@ -4,27 +4,12 @@ import { SWRConfig } from "swr";
 import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";
-import { Cormorant_Garamond, Bricolage_Grotesque } from 'next/font/google';
 import { NextUIProvider } from "@nextui-org/react";
 import { changeDateFormat } from "@/services/changeDateFormat";
 import SpinnerComponent from "@/components/SpinnerComponent/Spinner";
 
 
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-cormorant',
-  display: "swap",
-  preload: false,
-})
 
-const bricolage = Bricolage_Grotesque({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-bricolage',
-  display: "swap",
-  preload: false,
-})
 
 export default function App({ Component, pageProps }) {
   const fetcher = async (...args) => {
@@ -109,7 +94,7 @@ export default function App({ Component, pageProps }) {
   // timelineZoom={timelineZoom}
   return (
     <NextUIProvider>
-      <div className={`${cormorant.variable}  ${bricolage.variable} `}>
+      <div >
         <SWRConfig value={{ fetcher }}>
 
 

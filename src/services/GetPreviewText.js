@@ -1,11 +1,11 @@
 export default function getPreviewText(text, titleLength, endDateLength) {
     // Split the text into words
     const words = text.split(/\s+/);
-    let previewLength = 30;
+    let previewLength = 25;
     // first words number
 
-    if (titleLength > 40 || endDateLength > 0) {
-        previewLength = 20;
+    if (titleLength > 30 || endDateLength > 0) {
+        previewLength = 5;
     }
     const previewWords = words.slice(0, previewLength);
 

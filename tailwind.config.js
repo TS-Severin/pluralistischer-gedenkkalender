@@ -16,10 +16,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "cormorant": ['var(--font-cormorant)', 'Georgia', 'Times', 'serif'],
-        "bricolage": ['var(--font-bricolage)', 'Arial', 'Helvetica', 'sans-serif'],
-        "surt-regular": ['var(--font-surt-regular)', 'Arial', 'Helvetica', 'sans-serif'],
-        "surt-bold": ['var(--font-surt-bold)', 'Arial', 'Helvetica', 'sans-serif'],
+        "surt-regular": ['var(--font-surt-regular)', 'serif'],
+        "surt-bold": ['var(--font-surt-bold)', 'serif'],
       },
       hyphens: {
         auto: 'auto',
