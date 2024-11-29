@@ -29,7 +29,7 @@ export default function TimeLinePreviewWindow({ entry, entries }) {
                 <div className="max-sm:hidden font-surt pt-4" dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />
 
 
-                <Link href={entry.link} className="absolute right-0 bottom-0 font-surt text-[#7837c9]"><span className="inline-flex items-center">
+                <Link href={entry.link} className="absolute right-0 bottom-0 font-surt text-[#901f67]"><span className="inline-flex items-center">
                     mehr dazu<IoMdArrowDropright className="text-xl" /></span>
                 </Link>
 

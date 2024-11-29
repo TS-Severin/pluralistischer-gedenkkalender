@@ -49,7 +49,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
       <ConditionalLink href={link}>
         <StyledTimelineDot
           key={id}
-          ref={dotRef}
+          ref={isSmallScreen ? mobileDotRef : dotRef}
           $purpleFromPercentage={purpleFromPercentage}
           $percentOfYear={percentOfYear}
           onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
@@ -66,7 +66,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
 
 const StyledTimelineDot = styled.div`
 
-opacity: 0;
+opacity: 1;
 position: absolute;
 left: ${(props) => props.$percentOfYear}%;
 transform: translateX(-50%);
@@ -74,7 +74,7 @@ transform: translateY(-1px);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 10)}px;
 width: ${(props) => (props.$timelineZoom / 100 + 10)}px;
-background-color: ${(props) => props.$purpleFromPercentage};
+background-color: #901f67;
 box-shadow: rgb(0 0 0 / 20%) 0 0 ${(props) => (props.$timelineZoom / 100 + 10)}px;
 border-radius: 50%;
 z-index: 1000;
@@ -82,7 +82,7 @@ justify-self: center;
 transition: all 3s ease;
 &:hover {
   background-color: white;
-  box-shadow: rgb(118, 56, 200)
+  box-shadow: rgb(144, 31, 103)
   0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 10)}px;
   transition: all 0.01s ease;
 
@@ -97,7 +97,7 @@ transform: translateX(-50%);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 8)}px;
 width: ${(props) => (props.$timelineZoom / 100 + 8)}px;
-background-color: ${(props) => props.$purpleFromPercentage};;
+background-color: #901f67;
 box-shadow: rgb(0 0 0 / 20%) 0 0 ${(props) => (props.$timelineZoom / 100 + 8)}px;
 border-radius: 50%;
 z-index: 1000;
@@ -105,10 +105,13 @@ justify-self: center;
 transition: all 3s ease;
 &:hover {
   background-color: white;
-  box-shadow: rgb(118, 56, 200)
+  box-shadow: rgb(144, 31, 103)
   0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 4)}px;
   transition: all 0.01s ease;
 
 }
 
 `;
+
+// background-color: ${(props) => props.$purpleFromPercentage};
+// old color for box shadow on hover: rgb(118, 56, 200)

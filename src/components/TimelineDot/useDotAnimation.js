@@ -8,13 +8,13 @@ export default function useEaseInAnimation(elementRef, index) {
     if (element) {
 
       // First, set all elements to be invisible initially
-      gsap.set(element, { opacity: 1, zIndex: 1000, ease: 'power3.out', delay: 0.5 + Math.random() * 2, });
+      gsap.set(element, { opacity: 0, zIndex: 1000, ease: 'power3.out', delay: 0.5 + Math.random() * 2, });
 
       // Then, animate the elements to fade in with a delay
 
       gsap.fromTo(element,
-        { scale: 2 },
-        { scale: 1, ease: 'power3.out', delay: 0.5 + Math.random() * 2, });
+        { scale: 2, opacity: 0 },
+        { scale: 1, opacity: 1, ease: 'power3.out', delay: 0.5 + Math.random() * 2, });
 
 
 

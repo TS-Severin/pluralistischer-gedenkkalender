@@ -24,8 +24,6 @@ export default function App({ Component, pageProps }) {
 
   const { data: dataPage2, isLoading: isLoadingPage2 } = useSWR("https://cppdnetwork.com/wp-json/wp/v2/plgk-eintrag/?per_page=100&offset=100&_fields=id,title,excerpt,link,acf", fetcher);
 
-  // Initializing state for entries in order to concat all the entries fetched with two calls from the WP REST API which only allows to fetch 100 entries per page
-  // const [entries, setEntries] = useState([]);
 
   // Combined loading state
   const isLoading = isLoadingPage1 || isLoadingPage2;
@@ -44,7 +42,6 @@ export default function App({ Component, pageProps }) {
   }, [dataPage1, dataPage2]); // Only run when dataPage1 and dataPage2 change
 
 
-  // console.log("ALLES ", entries);
 
 
 

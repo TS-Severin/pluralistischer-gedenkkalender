@@ -16,7 +16,7 @@ export default function ZoomBar({ handleZoomChange }) {
 
 
             <Slider
-                color="secondary"
+
                 aria-label="zoom timeline"
                 step={10}
                 maxValue={2000}
@@ -24,6 +24,14 @@ export default function ZoomBar({ handleZoomChange }) {
                 defaultValue={100}
                 className="max-w-md"
                 onChange={handleChange}
+                classNames={{
+                    thumb: "bg-[#901f67] focus:bg-[#901f67] active:bg-[#901f67]",
+
+                    range: "bg-[#901f67]",
+                    filler: "bg-[#901f67]",
+
+
+                }}
             />
 
         </div >
