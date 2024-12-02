@@ -1,6 +1,7 @@
 import GenerateICalFiles from "@/services/GenerateICalFile";
 import Link from "next/link";
 import Image from "next/image";
+import { TbCalendarPlus } from "react-icons/tb";
 
 export default function ICalDownload({ date, title, iCalSlug, text }) {
 
@@ -32,7 +33,7 @@ export default function ICalDownload({ date, title, iCalSlug, text }) {
 
             <Link href={icalDownloadLink} download={`${titleForDownload}.ics`}>
 
-                <Image src="/calenderFresh.png" alt="icon for ical data download" width={30} height={30} />
+                <TbCalendarPlus className="text-3xl text-[#901f67]" />
 
             </Link>
         </>

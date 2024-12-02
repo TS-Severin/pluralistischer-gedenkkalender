@@ -7,7 +7,7 @@ export default function SpinnerComponent() {
         <div className="absolute top-[25%] left-[50%] translate-x-[-50%]">
             <Spinner
                 size="lg"
-                color="secondary"
+                color="default"
             />
 
         </div>

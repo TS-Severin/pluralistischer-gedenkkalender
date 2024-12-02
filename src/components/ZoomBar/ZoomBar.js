@@ -1,6 +1,6 @@
 import { Slider, Button } from "@nextui-org/slider";
-import { VolumeLowIcon } from "./VolumeLowIcon";
-import { VolumeHighIcon } from "./VolumeHighIcon";
+import { FaPlus, FaMinus } from "react-icons/fa6";
+
 
 export default function ZoomBar({ handleZoomChange }) {
 
@@ -16,7 +16,8 @@ export default function ZoomBar({ handleZoomChange }) {
 
 
             <Slider
-
+                color="foreground"
+                size="sm"
                 aria-label="zoom timeline"
                 step={10}
                 maxValue={2000}
@@ -25,15 +26,20 @@ export default function ZoomBar({ handleZoomChange }) {
                 className="max-w-md"
                 onChange={handleChange}
                 classNames={{
-                    thumb: "bg-[#901f67] focus:bg-[#901f67] active:bg-[#901f67]",
-
+                    thumb: "bg-[#901f67] focus:bg-[#901f67] active:bg-[#901f67] hover:bg-[#901f67]",
+                    foreground: "bg-[#901f67]",
                     range: "bg-[#901f67]",
-                    filler: "bg-[#901f67]",
 
 
+                    track: "bg-[#901f67]",
+                    // Optional: If you want to remove focus outline or customize it
+                    focusRing: "focus:outline-none",  // Optional: Remove default outline
                 }}
+                startContent={<FaMinus className="text-2xl" />}
+                endContent={<FaPlus className="text-2xl" />}
             />
 
         </div >
     );
 }
+
