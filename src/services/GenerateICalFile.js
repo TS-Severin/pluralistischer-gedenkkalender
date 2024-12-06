@@ -2,7 +2,7 @@
 import ical, { ICalCalendarMethod } from 'ical-generator';
 
 // Function to generate iCalendar files for each event
-export default function GenerateICalFiles(date, title, iCalSlug, text) {
+export default function GenerateICalFiles(date, title, iCalLink, text) {
     // Fetch calendar data from API
     // const { data: entries, isLoading } = useSWR("/api");
 
@@ -26,7 +26,7 @@ export default function GenerateICalFiles(date, title, iCalSlug, text) {
         repeating: {
             freq: 'YEARLY',
         },
-        url: `https://erinnerungsfutur.vercel.app/${iCalSlug}`,
+        url: `${iCalLink}`,
         description: text
     });
 
