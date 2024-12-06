@@ -11,7 +11,7 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
         entryObj => entryObj.clicked === true
     );
 
-
+    console.log("CLICKEDENTRY", clickedEntryId);
 
 
     const todayEntry = findEntryWithTodayDate(entries, previewIsClicked);
@@ -20,7 +20,7 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
 
 
 
-    if (todayEntry !== null) {
+    if (todayEntry !== null && !clickedEntryId) {
         return (
             <>{entries ?
                 <TimeLinePreviewWindow entry={todayEntry} entries={entries} /> : "null"}
@@ -29,9 +29,6 @@ export default function TimelinePreview({ entries, previewIsClicked }) {
         );
 
     }
-
-
-
 
     if (clickedEntryId) {
         const clickedEntry = entries.find(entryObj => entryObj.id === clickedEntryId.id);

@@ -5,8 +5,9 @@ export default function getPreviewText(text, titleLength, endDateLength) {
     // first words number
 
     if (titleLength > 30 || endDateLength > 0) {
-        previewLength = 5;
+        previewLength = 15;
     }
+
     const previewWords = words.slice(0, previewLength);
 
     // Join the words back into a string
