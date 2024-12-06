@@ -16,7 +16,7 @@ export default function TimeLinePreviewWindow({ entry, entries }) {
     return (
         <>
             <div className="relative h-[188px] sm:h-[220px]">
-                <h1 className={`font-surt-regular  ${endDate ? 'text-xl' : 'text-2xl'}`}>{`${startDate}${endDate ? ' -' : ''}`}</h1>
+                <h1 className={`font-surt-regular  ${endDate ? 'text-xl sm:text-2xl' : 'text-2xl'}`}>{`${startDate}${endDate ? ' -' : ''}`}</h1>
                 <h1 className="font-surt-regular text-xl sm:text-2xl">{`${endDate}`}</h1>
                 <p className={`font-surt-regular text-2xl hyphens-auto break-words sm:text-2xl ${endDate || entry.title.rendered.length > 55
                     ? 'text-lg'
