@@ -1,10 +1,9 @@
 import GetCurrentDayOfYearHelper from "@/services/GetCurrentDayOfYearHelper";
-// import GetTodayFullDateHelper from "@/services/GetTodayFullDateHelper";
 import styled from "styled-components";
 
+// vertica. axis indicating the date today
 
-
-export default function TimelineAxis({ title, date, timelineZoom = { timelineZoom } }) {
+export default function TimelineAxis({ timelineZoom = { timelineZoom } }) {
     const currentPercentOfYear = GetCurrentDayOfYearHelper();
     return (
 

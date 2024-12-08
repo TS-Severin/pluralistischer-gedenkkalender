@@ -4,7 +4,7 @@ import GetMonthDayDateHelper from "../../services/GetMonthDayDateHelper";
 import GetCurrentDayOfYearHelper from "@/services/GetCurrentDayOfYearHelper";
 import styled from "styled-components";
 
-
+// showing the today date in the horizontal axis
 
 export default function TimelineToday({ timelineZoom }) {
 

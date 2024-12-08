@@ -1,6 +1,7 @@
-import { Slider, Button } from "@nextui-org/slider";
+import { Slider } from "@nextui-org/slider";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 
+// slider for zooming in and out
 
 export default function ZoomBar({ handleZoomChange }) {
 

@@ -4,10 +4,7 @@ import Preview from "@/components/Preview/Preview";
 import ZoomBar from "@/components/ZoomBar/ZoomBar";
 
 export default function Home({ handlePreviewClick, previewIsClicked, entries, handleZoomChange, timelineZoom }) {
-  // const { user, error, isLoading } = useUser();
 
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>{error.message}</div>;
 
   return (
     <>

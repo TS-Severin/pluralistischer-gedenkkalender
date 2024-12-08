@@ -1,15 +1,11 @@
 import "@/styles/globals.scss";
 import { SWRConfig } from "swr";
-// import Navigation from "@/components/Navigation/Navigation";
 import { useEffect } from "react";
 import { useState } from "react";
 import useSWR from "swr";
 import { NextUIProvider } from "@nextui-org/react";
 import { changeDateFormat } from "@/services/changeDateFormat";
 import SpinnerComponent from "@/components/SpinnerComponent/Spinner";
-
-
-
 
 export default function App({ Component, pageProps }) {
   const fetcher = async (...args) => {
@@ -20,6 +16,7 @@ export default function App({ Component, pageProps }) {
     return response.json();
   };
 
+  // fetch all dates in two pages (max entries per page is 100 in the wordpress api)
   const { data: dataPage1, isLoading: isLoadingPage1 } = useSWR("https://cppdnetwork.com/wp-json/wp/v2/plgk-eintrag/?per_page=100&_fields=id,title,excerpt,link,acf", fetcher);
 
   const { data: dataPage2, isLoading: isLoadingPage2 } = useSWR("https://cppdnetwork.com/wp-json/wp/v2/plgk-eintrag/?per_page=100&offset=100&_fields=id,title,excerpt,link,acf", fetcher);
@@ -63,7 +60,7 @@ export default function App({ Component, pageProps }) {
   }, [entries]);
   if (isLoading) return <div><SpinnerComponent /></div>;
 
-  // console.log("PREVIEW IS CLICKED ", previewIsClicked);
+
 
 
 
@@ -86,7 +83,7 @@ export default function App({ Component, pageProps }) {
   };
 
   if (isLoading) return <div>Loading...</div>;
-  // if (!dataPage1 || !dataPage2) return <div>Failed to load data</div>;
+
 
   // timelineZoom={timelineZoom}
   return (

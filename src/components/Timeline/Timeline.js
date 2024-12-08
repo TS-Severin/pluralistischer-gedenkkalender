@@ -3,32 +3,16 @@ import TimelineMonths from "../TimelineMonths/TimelineMonths";
 import TimelineAxis from "../TimelineAxis/TimelineAxis";
 import TimelineToday from "../TimelineToday/TimelineToday";
 import styled from "styled-components";
-import { useState, useEffect } from 'react';
 
 
 
 export default function Timeline({ handlePreviewClick, previewIsClicked, timelineZoom, entries }) {
 
-  // console.log("TIMELINE ", entries);
-
-  // turns on overflow-visibility of dots when flying in and turns on overflow-x-scroll afterwards
-
-  const [overflowVisible, setOverflowVisible] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setOverflowVisible(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  //   if (error) return <div>Error fetching data</div>;
-  // if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
       <div
-        className={`w-full overflow-x-${overflowVisible ? 'visible' : 'scroll'} bg-white border-4 py-8`}
+        className={`w-full  bg-white border-4 py-8`}
       >
 
         <div style={{ width: `${timelineZoom}%` }} className="flex flex-col bg-white h-32"

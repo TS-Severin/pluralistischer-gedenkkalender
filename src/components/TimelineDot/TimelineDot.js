@@ -5,6 +5,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import Link from "next/link";
 import getPurpleFromPercentage from "@/services/getPurpleFromPercentage";
 
+// dots in timeline (with gsap animation)
+
 export default function TimelineDot({ id, date, link, handlePreviewClick, timelineZoom }) {
   const percentOfYear = GetDayOfYearHelper(date);
 
@@ -39,6 +41,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
     };
   }, []); // Empty dependency array to run only on mount and unmount
 
+  // the conditional link ensures that the link only works on desktop size, otherwise it only opens the preview window
   var ConditionalLink = !isSmallScreen ? Link : "div";
 
 

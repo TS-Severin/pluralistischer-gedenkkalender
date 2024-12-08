@@ -1,12 +1,13 @@
 import getFullDayDate from "@/services/getFullDayDate";
 import getPreviewText from "@/services/GetPreviewText";
 import ICalDownload from "../ICalDownload/ICalDownload";
-import DateDownloadButton from "../DateDownloadButton/DateDownloadButton";
 import Link from "next/link";
 import { IoMdArrowDropright } from "react-icons/io";
 
-export default function TimeLinePreviewWindow({ entry, entries }) {
-    console.log("Data: ", entry);
+// preview window, holding preview text, ical download and link to text
+
+export default function TimeLinePreviewWindow({ entry }) {
+
 
     const startDate = getFullDayDate(entry.acf.date);
     const endDate = entry.acf.endDate !== entry.acf.date ? `${getFullDayDate(entry.acf.endDate)}` : "";
@@ -40,7 +41,7 @@ export default function TimeLinePreviewWindow({ entry, entries }) {
                 <div className="absolute top-0 right-0">
                     <ICalDownload date={entry.acf.date} title={entry.title.rendered} iCalLink={entry.link} text={entry.excerpt.rendered} />
                 </div>
-                {/* <DateDownloadButton event={entry} entries={entries} /> */}
+
             </div>
         </>
     );

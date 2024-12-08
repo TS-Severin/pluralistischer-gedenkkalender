@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import GetDayOfYearHelper from "../../services/GetDayOfYearHelper";
 
-
+// months in timeline
 
 export default function TimelineMonths({ timelineZoom }) {
     const months = [
