@@ -12,7 +12,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
   return (
     <>
       <div
-        className={`w-full  bg-white border-4 py-8`}
+        className={`w-full overflow-x-scroll bg-white border-4 py-8`}
       >
 
         <div style={{ width: `${timelineZoom}%` }} className="flex flex-col bg-white h-32"
