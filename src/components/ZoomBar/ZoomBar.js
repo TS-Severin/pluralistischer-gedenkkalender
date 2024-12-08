@@ -35,8 +35,8 @@ export default function ZoomBar({ handleZoomChange }) {
                     // Optional: If you want to remove focus outline or customize it
                     focusRing: "focus:outline-none",  // Optional: Remove default outline
                 }}
-                startContent={<FaMinus className="text-2xl" />}
-                endContent={<FaPlus className="text-2xl" />}
+                startContent={<FaMinus className="text-xl" />}
+                endContent={<FaPlus className="text-xl" />}
             />
 
         </div >
