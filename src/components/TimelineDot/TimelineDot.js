@@ -49,17 +49,17 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
     <>
 
 
-
-      <StyledTimelineDot
-        key={id}
-        ref={isSmallScreen ? mobileDotRef : dotRef}
-        $purpleFromPercentage={purpleFromPercentage}
-        $percentOfYear={percentOfYear}
-        onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
-        onClick={isSmallScreen ? () => handlePreviewClick(id) : undefined}
-        $timelineZoom={timelineZoom}
-      ><ConditionalLink href={link} /></StyledTimelineDot>
-
+      <ConditionalLink href={link} >
+        <StyledTimelineDot
+          key={id}
+          ref={isSmallScreen ? mobileDotRef : dotRef}
+          $purpleFromPercentage={purpleFromPercentage}
+          $percentOfYear={percentOfYear}
+          onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
+          onClick={isSmallScreen ? () => handlePreviewClick(id) : undefined}
+          $timelineZoom={timelineZoom}
+        />
+      </ConditionalLink>
 
     </>
   );
