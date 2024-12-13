@@ -13,7 +13,7 @@ export default function TimeLinePreviewWindow({ entry }) {
     const endDate = entry.acf.endDate !== entry.acf.date ? `${getFullDayDate(entry.acf.endDate)}` : "";
 
     const previewText = getPreviewText(entry.excerpt.rendered, entry.title.rendered.length, endDate.length);
-
+    // console.log("DATA: ", entry);
     return (
         <>
             <div className="relative h-[188px] sm:h-[220px]">
