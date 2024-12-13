@@ -2,17 +2,12 @@ import getFullDayDate from "@/services/getFullDayDate";
 import getPreviewText from "@/services/GetPreviewText";
 import ICalDownload from "../ICalDownload/ICalDownload";
 import Link from "next/link";
-import { useRouter } from 'next/router';
 import { IoMdArrowDropright } from "react-icons/io";
 
 // preview window, holding preview text, ical download and link to text
 
 export default function TimeLinePreviewWindow({ entry }) {
-    const router = useRouter();
 
-    const handleClick = () => {
-        router.push(entry.link); // router push instead of link under "mehr dazu" because the app is embedded with iframes and the link should be in the whole window
-    };
 
     const startDate = getFullDayDate(entry.acf.date);
     const endDate = entry.acf.endDate !== entry.acf.date ? `${getFullDayDate(entry.acf.endDate)}` : "";
@@ -35,9 +30,9 @@ export default function TimeLinePreviewWindow({ entry }) {
                 <div className={`max-sm:hidden font-surt pt-4 ${entry.title.rendered.length > 40 ? 'hidden' : ''}`} dangerouslySetInnerHTML={{ __html: `${previewText} ...` }} />
 
 
-                <button onClick={handleClick} className="absolute right-0 bottom-0 font-surt text-[#901f67]"><span className="inline-flex items-center">
+                <a href={entry.link} target="_blank" className="absolute right-0 bottom-0 font-surt text-[#901f67]"><span className="inline-flex items-center">
                     mehr dazu<IoMdArrowDropright className="text-xl" /></span>
-                </button>
+                </a>
 
                 <p className="absolute bottom-0 max-sm:hidden font-surt italic">{entry.acf.author}</p>
 

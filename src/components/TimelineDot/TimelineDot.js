@@ -42,14 +42,14 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
   }, []); // Empty dependency array to run only on mount and unmount
 
   // the conditional link ensures that the link only works on desktop size, otherwise it only opens the preview window
-  var ConditionalLink = !isSmallScreen ? Link : "div";
+  var ConditionalLink = !isSmallScreen ? "a" : "div";
 
 
   return (
     <>
 
 
-      <ConditionalLink href={link} >
+      <ConditionalLink href={link} target="_blank" >
         <StyledTimelineDot
           key={id}
           ref={isSmallScreen ? mobileDotRef : dotRef}
