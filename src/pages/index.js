@@ -15,7 +15,7 @@ export default function Home({ handlePreviewClick, previewIsClicked, entries, ha
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        <div className="mx-4">
+        <div >
 
           <Preview previewIsClicked={previewIsClicked} entries={entries} />
 
