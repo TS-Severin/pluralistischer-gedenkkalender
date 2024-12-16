@@ -96,8 +96,10 @@ transition: all 3s ease;
   @media (max-width: 640px) {
     scale: 1;
     opacity: 1;
-    
+    all: unset;
+    display: block;
 transform: translateX(-50%);
+transform: translateY(9px);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 8)}px;
 width: ${(props) => (props.$timelineZoom / 100 + 8)}px;
