@@ -49,12 +49,12 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
     <>
 
 
-      <ConditionalLink href={link} target="_blank" >
+      <ConditionalLink href={link} target="_blank" style={{ position: 'absolute', left: `${percentOfYear}%` }} >
         <StyledTimelineDot
           key={id}
           ref={isSmallScreen ? mobileDotRef : dotRef}
           $purpleFromPercentage={purpleFromPercentage}
-          $percentOfYear={percentOfYear}
+
           onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
           onClick={isSmallScreen ? () => handlePreviewClick(id) : undefined}
           $timelineZoom={timelineZoom}
@@ -70,8 +70,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
 const StyledTimelineDot = styled.div`
 
 opacity: 1;
-position: absolute;
-left: ${(props) => props.$percentOfYear}%;
+
 transform: translateX(-50%);
 transform: translateY(-1px);
 overflow: visible;
@@ -94,8 +93,7 @@ transition: all 3s ease;
   @media (max-width: 640px) {
     scale: 1;
     opacity: 1;
-    position: absolute;
-left: ${(props) => props.$percentOfYear}%;
+    
 transform: translateX(-50%);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 8)}px;
