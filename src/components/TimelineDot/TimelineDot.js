@@ -70,11 +70,11 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
 
 
 const StyledTimelineDot = styled.button`
-
+all: unset;
+display: block;
 opacity: 1;
-
 transform: translateX(-50%);
-transform: translateY(-1px);
+transform: translateY(5px);
 overflow: visible;
 height: ${(props) => (props.$timelineZoom / 100 + 10)}px;
 width: ${(props) => (props.$timelineZoom / 100 + 10)}px;

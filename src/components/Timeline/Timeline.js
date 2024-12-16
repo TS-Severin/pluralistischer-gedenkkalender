@@ -68,7 +68,7 @@ const StyledTimelineLine = styled.span`
   height: ${(props) => (props.$timelineZoom / 250 + 1)}px;
   background-color: black;
   position: relative;
-  top: ${(props) => (props.$timelineZoom / 535 + 61)}%;;
+  top: ${(props) => (props.$timelineZoom / 200 + 60)}%;
   
   
   @media (max-width: 640px) {
@@ -76,7 +76,7 @@ const StyledTimelineLine = styled.span`
   height: ${(props) => (props.$timelineZoom / 250 + 1)}px;
   background-color: black;
   position: relative;
-  top: ${(props) => (props.$timelineZoom / 735 + 63)}%;;
+  top: ${(props) => (props.$timelineZoom / 200 + 63)}%;;
   transition: all 0.3s ease;
   }
 `
