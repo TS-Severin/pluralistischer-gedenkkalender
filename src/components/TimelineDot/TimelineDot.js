@@ -49,7 +49,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
     <>
 
 
-      <ConditionalLink href={link} target="_blank" style={{ position: 'absolute', left: `${percentOfYear}%` }} >
+      <ConditionalLink href={link} target="_blank" style={{ position: 'absolute', left: `${percentOfYear}%` }} tabIndex="-1">
         <StyledTimelineDot
           key={id}
           ref={isSmallScreen ? mobileDotRef : dotRef}
@@ -57,7 +57,9 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
 
           onMouseEnter={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
           onClick={isSmallScreen ? () => handlePreviewClick(id) : undefined}
+          onFocus={!isSmallScreen ? () => handlePreviewClick(id) : undefined}
           $timelineZoom={timelineZoom}
+          tabIndex="0"
         />
       </ConditionalLink>
 
@@ -67,7 +69,7 @@ export default function TimelineDot({ id, date, link, handlePreviewClick, timeli
 
 
 
-const StyledTimelineDot = styled.div`
+const StyledTimelineDot = styled.button`
 
 opacity: 1;
 
@@ -82,7 +84,8 @@ border-radius: 50%;
 z-index: 1000;
 justify-self: center;
 transition: all 3s ease;
-&:hover {
+&:hover,
+&:focus {
   background-color: white;
   box-shadow: rgb(144, 31, 103)
   0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 10)}px;
@@ -104,7 +107,8 @@ border-radius: 50%;
 z-index: 1000;
 justify-self: center;
 transition: all 3s ease;
-&:hover {
+&:hover,
+&:focus {
   background-color: white;
   box-shadow: rgb(144, 31, 103)
   0px 7px 29px ${(props) => (props.$timelineZoom / 100 + 4)}px;

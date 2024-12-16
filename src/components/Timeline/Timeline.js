@@ -37,7 +37,7 @@ export default function Timeline({ handlePreviewClick, previewIsClicked, timelin
 
 
           <div
-            className="relative  w-full align-middle justify-center top-[60%] sm:top-[57%]"
+            className="relative  w-full align-middle justify-center top-[53%] sm:top-[52%]"
 
           >
 
@@ -68,7 +68,7 @@ const StyledTimelineLine = styled.span`
   height: ${(props) => (props.$timelineZoom / 250 + 1)}px;
   background-color: black;
   position: relative;
-  top: ${(props) => (props.$timelineZoom / 200 + 60)}%;;
+  top: ${(props) => (props.$timelineZoom / 535 + 61)}%;;
   
   
   @media (max-width: 640px) {
@@ -76,7 +76,7 @@ const StyledTimelineLine = styled.span`
   height: ${(props) => (props.$timelineZoom / 250 + 1)}px;
   background-color: black;
   position: relative;
-  top: ${(props) => (props.$timelineZoom / 200 + 63)}%;;
+  top: ${(props) => (props.$timelineZoom / 735 + 63)}%;;
   transition: all 0.3s ease;
   }
 `
